@@ -12,7 +12,8 @@ var defaultConfig = {
   'locales': {
     'availableLocales': ['en'],
     'fallbackLocale': 'en'
-  }
+  },
+  'skipCustomListeners': true
 };
 
 module.exports = function(config, app) {
@@ -61,6 +62,12 @@ module.exports = function(config, app) {
 
     this.getAppName = function() {
       return config.app && config.app.name ? config.app.name : app;
+    };
+
+    this.getSkipCustomListeners = function() {
+      return typeof config.skipCustomListeners === 'boolean' ?
+        config.skipCustomListeners:
+        defaultConfig.skipCustomListeners;
     };
 
     this.$get = function() {

@@ -2,20 +2,23 @@
   module.exports = [
     '$scope', '$location', 'Notifications', 'ProcessInstanceResource',
     '$modalInstance', 'processInstance', 'processData', 'Views', '$translate',
+    'configuration',
     function($scope,   $location,   Notifications,   ProcessInstanceResource,
-      $modalInstance,   processInstance,   processData,   Views, $translate) {
+      $modalInstance,   processInstance,   processData,   Views, $translate,
+      configuration) {
 
       var BEFORE_CANCEL = 'beforeCancellation',
           PERFORM_CANCEL = 'performCancellation',
           CANCEL_SUCCESS = 'cancellationSuccess',
           CANCEL_FAILED = 'cancellationFailed';
 
+      var SKIP_CUSTOM_LISTENERS = configuration.getSkipCustomListeners();
       $scope.processInstance = processInstance;
 
       var cancelProcessInstanceData = processData.newChild($scope);
 
       $scope.options = {
-        skipCustomListeners: true,
+        skipCustomListeners: SKIP_CUSTOM_LISTENERS,
         skipIoMappings: true
       };
 

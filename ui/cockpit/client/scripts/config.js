@@ -16,5 +16,6 @@ window.camCockpitConf = {
   // 'locales': {
   //   'availableLocales': ['en', 'de'],
   //   'fallbackLocale': 'en'
-  // }
+  // },
+  // skipCustomListeners: true
 };
