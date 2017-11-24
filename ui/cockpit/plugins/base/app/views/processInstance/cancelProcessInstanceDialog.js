@@ -18,9 +18,11 @@
       var cancelProcessInstanceData = processData.newChild($scope);
 
       $scope.options = {
-        skipCustomListeners: SKIP_CUSTOM_LISTENERS,
+        skipCustomListeners: SKIP_CUSTOM_LISTENERS.default,
         skipIoMappings: true
       };
+
+      $scope.hideSkipCustomListeners = SKIP_CUSTOM_LISTENERS.hidden;
 
       $scope.$on('$routeChangeStart', function() {
         $modalInstance.close($scope.status);

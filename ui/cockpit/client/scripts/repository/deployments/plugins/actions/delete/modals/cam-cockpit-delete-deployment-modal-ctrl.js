@@ -30,9 +30,11 @@ module.exports = [
 
     var options = $scope.options = {
       cascade: false,
-      skipCustomListeners: SKIP_CUSTOM_LISTENERS,
+      skipCustomListeners: SKIP_CUSTOM_LISTENERS.default,
       skipIoMappings: true
     };
+
+    $scope.hideSkipCustomListeners = SKIP_CUSTOM_LISTENERS.hidden;
 
     $scope.deployment = deployment;
     $scope.status;
