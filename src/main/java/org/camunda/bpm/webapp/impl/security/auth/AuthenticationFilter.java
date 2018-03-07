@@ -65,7 +65,7 @@ public class AuthenticationFilter implements Filter {
     }
 
   }
-
+  
   protected void clearProcessEngineAuthentications(Authentications authentications) {
     for (Authentication authentication : authentications.getAuthentications()) {
       ProcessEngine processEngine = Cockpit.getProcessEngine(authentication.getProcessEngineName());
